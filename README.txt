@@ -3,11 +3,11 @@
 /*-------------------------------------------------------------------------------*/
 
 Description: 
-  Numerical solution of the coupled, one-dimensional evolution of film height over a deformable bubble. 
+  	Numerical solution of the coupled, one-dimensional evolution of film height over a deformable bubble. 
   	Algorithm implements the finite difference method / quasi-linearization to solve a system
 	of one first order hyperbolic PDE and two second-order parabolic PDEs.
 	See supporting documentation for the derivation of the basic equations and
-	solution algorithm.
+	solution algorithm. CODE GIVES NON-PHYSICAL RESULTS.
 
 Language: C++
 
@@ -44,11 +44,8 @@ Instructions:
 	2. Set input parameters in src/params.in
 	3. Run executable,
 		cd src
-
-Notes:
-	Current simulation gives non-physical results
+		./run
+	4. Post-process output files written to output.
 
 Authors:
 	Joseph Barakat and Xingyi Shi
-		./run
-	4. Post-process output files written to output.
