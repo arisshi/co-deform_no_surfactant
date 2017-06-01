@@ -13,7 +13,7 @@ Description:
 
 Language: C++
 
-Libraries: LAPACK, ATLAS, BLAS, GSL
+Libraries: LAPACK, ATLAS, BLAS, GSL, EIGEN
 
 Directory tree:
 	include - contains header files
@@ -47,17 +47,3 @@ Instructions:
 		cd src
 		./run
 	4. Post-process output files written to output.
-
-Notes:
-	Since the problem is fourth-order in space, the CFL number is given by
-	
-	        dt D
-	  CFL = ----
-	        dr^4
-	
-	where D is a fourth-order diffusion coefficient. Typically,
-	
-	  D ~ O(r1^6 / Ca)    or    D ~ O(r1^4 Ma)
-	
-	Having CFL = O(1) is desirable for numerical accuracy, but is not 
-	required for numerical stability.
