@@ -1,0 +1,60 @@
+#==============================================================================
+# MAKEFILE_IN
+#==============================================================================
+# directories
+WORK_DIR = ~/documents/ori_bubble
+INSTALL_DIR = $(HOME)/documents/install
+LAPACK_DIR = $(INSTALL_DIR)/lapack-3.7.0
+ATLAS_DIR = $(INSTALL_DIR)/atlas-3.10.3/lib
+GSL_DIR = $(INSTALL_DIR)/gsl-2.3
+BESSEL_DIR = $(INSTALL_DIR)/amos
+#BOOST_DIR = $(INSTALL_DIR)/boost_1_58_0
+
+#==============================================================================
+# libraries
+LAPACK_LIB = /home/xingyi/documents/install/lapack-3.7.0/liblapack.a
+LAPACKE_LIB = /home/xingyi/documents/install/lapack-3.7.0/liblapacke.a
+BLAS_LIB = /usr/lib/libblas.a
+CBLAS_LIB = /usr/lib/libcblas.a
+ATLAS_LIB = /usr/lib/libatlas.a
+GSL_LIB = /usr/local/lib/libgsl.a
+BESSEL_LIB = /usr/lib/libcomplex_bessel.so
+UMF_LIB = /home/xingyi/documents/install/SuiteSparse/UMFPACK/Lib
+SS_LIB = /home/xingyi/documents/install/SuiteSparse/lib
+#BESSEL_LIB = $(BESSEL_DIR)/libamos.a
+#BOOST_LIB = $(BOOST_DIR)/install/lib/libboost_*.a
+
+LIBRARIES = 
+LIBRARIES += $(LAPACKE_LIB) $(LAPACK_LIB) 
+LIBRARIES += $(BLAS_LIB) $(CBLAS_LIB) $(ATLAS_LIB)
+LIBRARIES += $(GSL_LIB) #$(UMF_LIB) $(SS_LIB)
+#LIBRARIES += $(BESSEL_LIB)
+#LIBRARIES += $(BOOST_LIB)
+
+#==============================================================================
+# includes
+COMMON_INC = -I /usr/include
+LAPACKE_INC = -I  $(LAPACK_DIR)/LAPACKE/include
+GSL_INC = -I $(GSL_DIR)
+EIGEN_INC = -I /home/xingyi/documents/install/eigen
+UMF_INC = -I /home/xingyi/documents/install/SuiteSparse/UMFPACK
+SS_INC = -I /home/xingyi/documents/install/SuiteSparse/include
+#BOOST_INC = -I $(BOOST_DIR)/
+
+INCLUDES =
+INCLUDES += $(COMMON_INC) $(LAPACKE_INC)
+INCLUDES += $(GSL_INC)  $(EIGEN_INC) #$(UMF_INC) $(SS_INC)
+#INCLUDES += $(BOOST_INC)
+
+#==============================================================================
+# loader
+LOADER = gfortran
+LOADOPTS =
+
+#==============================================================================
+# compiler
+CC = g++
+CLFAGS = -O3 -g -ggdb  
+#WARN = -Wall
+
+COMPILE = $(CC) -c $(CFLAGS) $(INCLUDES)
